@@ -1,0 +1,24 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "分类页面",
+                    "pathName": "/pages/goods_detail/index",
+                    "query": "goods_id=43985",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

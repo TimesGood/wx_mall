@@ -1,0 +1,13 @@
+.search{
+    height: 90rpx;
+    padding: 10rpx;
+    background-color: var(--themeColor);
+}
+.search_navigator{
+    height: 100%;
+    display: flex;
+    justify-content: center;/* 水平居中 */
+    align-items: center;/* 垂直居中 */
+    background-color: white;
+    color: #C0BEB6;
+}
