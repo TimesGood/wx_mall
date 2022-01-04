@@ -49,7 +49,7 @@
     "compileType": "miniprogram",
     "libVersion": "2.19.4",
     "appid": "wx61ea7268b4b3fa06",
-    "projectname": "demo",
+    "projectname": "wx_mall",
     "debugOptions": {
         "hidedInDevtools": []
     },

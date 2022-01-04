@@ -1,4 +1,7 @@
 /* pages/goods_detail/index.wxss */
+page{
+    padding-bottom: 90rpx;
+}
 .detail_swiper swiper{
     width: 100%;
     height: 60vw;

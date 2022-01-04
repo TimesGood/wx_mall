@@ -7,9 +7,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        goodsObj:{}
+        goodsObj:{},
     },
-
 
     /**
      * 生命周期函数--监听页面加载
@@ -27,6 +26,7 @@ Page({
         */
         this.setData({
             goodsObj:{
+                goods_id:res.goods_id,
                 goods_name:res.goods_name,
                 goods_price:res.goods_price,
                 /*
@@ -37,6 +37,7 @@ Page({
                     goods_introduce:res.goods_introduce.replace(/\.webp/g,'.jpg'),
                 */
                 goods_introduce:res.goods_introduce.replace(/\.webp/g,'.jpg'),
+                goods_small_logo:res.goods_small_logo,
                 pics:res.pics
             }
         })
@@ -52,6 +53,29 @@ Page({
         wx.previewImage({
             current: urls[index],
           urls: urls,
+        })
+    },
+    //点击加入购物车
+    handleCartAdd(e){
+        //获取缓存中的购物车数组
+        let cart = wx.getStorageSync('cart') || [];
+        //判断商品对象是否存在于购物车数组中
+        let index = cart.findIndex(v => v.goods_id === this.data.goodsObj.goods_id);
+        if(index === -1) {
+            //购物车不存在该商品，加入购物车
+            this.data.goodsObj.num = 1
+            this.data.goodsObj.checked = true
+            cart.push(this.data.goodsObj)
+        }else{
+            //购物车已存在,商品数量++
+            cart[index].num++;
+        }
+        //把购物车重新添加回缓存中
+        wx.setStorageSync('cart', cart)
+        wx.showToast({
+          title: '加入成功',
+          icon: 'success',
+          mask: true
         })
     },
 
