@@ -11,7 +11,6 @@
             <view>{{address.all}}</view>
         </view>
         <view class="user_phone">{{address.telNumber}}</view>
-        
     </view>
 </view>
 <!-- 购物车内容 -->
